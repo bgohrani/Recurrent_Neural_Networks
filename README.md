@@ -15,3 +15,18 @@ are connected to one another along a temporal sequence. This characteristic make
 - Training process replicated with GPU hardware support.
 - Implementing batching in RNNs to speed up the training process.
 - Batching using LSTM and GRU cells in the network.
+
+
+## Sequence-to-Sequence classification using Encoder-Decoder models in PyTorch
+
+This repository contains a project, which implments a **Neural Machine Transliteration** task by using RNNs to form Encoder-Decoder Models. In Deep Learning, it is common to be dealing with sequences which are of unequal length, thus requiring two separate RNNs. The first RNN is known as the Encoder Model and takes in an input sequence and forms an encoded hidden state which serves as an output of the model. The actual outputs of each of the cells in the RNN is commonly not of much significance. The hidden and cell states of the encoder RNN are passed as the initial hidden and cell states of the second RNN, known as the Decoder. It is here that the output sequence is generated. This RNN has a different set of weights and uses the output of the previous cell as the input to the next. The Decoder RNN givens out a sequence which serves as the output of the model and is used for computation of loss which then forms gradients that flow all the way back to the encoder. Since one sequence is taken as an input and a sequence is also returned as an output, these are commonly known as _Sequence-to-Sequence models_. In this project, we will be implementing a transliteration problem, conversion of english words to hindi.
+
+**Project: Encoder_Decoder_Machine_Transliteration** Notebook Outline:
+- Import the training and test data xml files into the workspace.
+- Writing down functions for cleaning strings to spearate out words and remove special characters.
+- Writing down a class that neatly processes our data for us and returns equiavalent lists of cleaned hindi and english words along with batches if necessary.
+- Writing functions to encode the data (Not the enocder we have seen above, similar to one-hot like encoding)
+- Building the Encoder and Decoder architecture, as well as the sequence-to-sequence class to call them as required.
+- Initializing weights, setting up the training and evaluation function and training the model.
+
+Note: This work is greatly inspired by _Ben Trevett's_ tutorials on implementing a few sequence-to-sequence (seq2seq) models with PyTorch and TorchText. You can check out the repository [here](https://github.com/bentrevett/pytorch-seq2seq). The training and testing data have been attached in the repository.
