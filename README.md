@@ -36,7 +36,7 @@ Note: This work is greatly inspired by _Ben Trevett's_ tutorials on implementing
 Often when we work with Neural Networks, we can make use of their full potential and the enormous power of vectorization to speed up the training process. We also know that this technique is very popular when working with FeedForward Neural Networks. The same can also be done with RNNs. However, we face a challenge while doing so. The whole concept of RNNs is needed since we deal with variable length data. How do we then, send it in the form of batches? Some preprocessing is needed while doing so. The approach that we have used here is that we send sequences which are of the same length as a single batch. The lengths may vary across batches but remain constant within a batch. Using this method, I have recreated my project by implementing batching for the transliteration task. The entire notebook remains the same, except for the training function, where the idea is implemented.
 
 
-**Encoder_Decoder_Batched_pre_attention** Notebook: 
+**Encoder_Decoder_Modified** Notebook: 
 The two previous versions given above represent a simple Encoder Decoder model, wherein the context vector is just passed on to the first cell of the decoder. When decoding the input data, sometimes the required information may get morphed, causing difficulties during prediction by the network. The outputs of the decoder cell may also get morphed while passing through the RNN cell. To resolve these issues, we use a modified Encoder-Decoder architecture as shown below 
 
 ![Image of Architecture](https://user-images.githubusercontent.com/80106630/128759901-e816c93c-71e3-41b5-a008-3b0a6cb9035c.png) 
