@@ -29,4 +29,8 @@ This repository contains a project, which implments a **Neural Machine Translite
 - Building the Encoder and Decoder architecture, as well as the sequence-to-sequence class to call them as required.
 - Initializing weights, setting up the training and evaluation function and training the model.
 
-Note: This work is greatly inspired by _Ben Trevett's_ tutorials on implementing a few sequence-to-sequence (seq2seq) models with PyTorch and TorchText. You can check out the repository [here](https://github.com/bentrevett/pytorch-seq2seq). The training and testing data have been attached in the repository.
+Note: This work is greatly inspired by _Ben Trevett's_ tutorials on implementing a few sequence-to-sequence (seq2seq) models with PyTorch and TorchText. You can check out the repository [here](https://github.com/bentrevett/pytorch-seq2seq). The training and testing data I've used has been attached in the repository here.
+
+
+**Project_Encoder_Decoder_Batched** Notebook:
+Often when we work with Neural Networks, we can make use of their full potential and the enormous power of vectorization to speed up the training process. We also know that this technique is very popular when working with FeedForward Neural Networks. The same can also be done with RNNs. However, we face a challenge while doing so. The whole concept of RNNs is needed since we deal with variable length data. How do we then, send it in the form of batches? Some preprocessing is needed while doing so. The approach that we have used here is that we send sequences which are of the same length as a single batch. The lengths may vary across batches but remain constant within a batch. Using this method, I have recreated my project by implementing batching for the transliteration task. The entire notebook remains the same, except for the training function, where the idea is implemented.
